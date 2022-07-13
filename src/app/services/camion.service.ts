@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,17 @@ import { Injectable } from '@angular/core';
 })
 export class CamionService {
 
-  constructor() { }
+  private readonly BASE_URL = 'http://localhost:8080/api/invoices';
+
+  constructor( private http: HttpClient) { }
+
+  getCamion(){
+    return this.http.get<any>(this.BASE_URL).pipe(
+      map(data => this.parserCamionData(data))
+    );
+  }
+
+  parserCamionData(data: any){
+    console.log(data);
+  }
 }

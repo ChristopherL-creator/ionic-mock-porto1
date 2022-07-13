@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CamionService } from '../services/camion.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor( private camionService: CamionService) {}
+
+  loadCamion(){
+    this.camionService.getCamion();
+  }
+
+
 
 }
