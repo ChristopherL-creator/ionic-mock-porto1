@@ -1,0 +1,7 @@
+{
+  "name": "ionic-mock-porto1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
