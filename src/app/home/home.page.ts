@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CamionService } from '../services/camion.service';
 
 @Component({
@@ -6,14 +6,11 @@ import { CamionService } from '../services/camion.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
   constructor( private camionService: CamionService) {}
 
-  loadCamion(){
+  ngOnInit(): void {
     this.camionService.getCamion();
   }
-
-
-
 }

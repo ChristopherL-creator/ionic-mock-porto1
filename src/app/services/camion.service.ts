@@ -11,9 +11,7 @@ export class CamionService {
   constructor( private http: HttpClient) { }
 
   getCamion(){
-    return this.http.get<any>(this.BASE_URL).pipe(
-      map(data => this.parserCamionData(data))
-    );
+    return this.http.get<any>(this.BASE_URL);
   }
 
   parserCamionData(data: any){
